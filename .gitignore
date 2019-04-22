@@ -3,3 +3,4 @@ node_modules
 .DS_*
 .env*
 
+./config/dev.js
