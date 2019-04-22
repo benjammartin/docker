@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start:local": "docker-compose -f docker-compose.yml -f docker-compose.local.yml up --build",
+    "build": "docker-compose -f docker-compose.yml -f up --build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

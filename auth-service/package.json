@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --mode production --config webpack.config.js  && nodemon dist/index.js",
+    "start": "webpack --mode production --config webpack.config.js  && node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

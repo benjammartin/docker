@@ -10,10 +10,6 @@ let sessionSaveUninitialized = false
 let trustProxy = true
 let csrf = true
 let pathPrefix = '/auth'
-let GOOGLE_ID = '614808468271-9pka5rlcreqoichdl88711phkf8a5bma.apps.googleusercontent.com'
-let GOOGLE_SECRET = 'o8ZYNV74oPJ6zKlGntb1b5EO'
-
-
 
 export  {
     sessionSecret, 

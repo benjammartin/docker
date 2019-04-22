@@ -4,6 +4,8 @@ services:
      build: ./auth-service/
      env_file: ./auth-service/.env.docker
      restart: always
+     depends_on: 
+       - prisma
   booking-service:
      build: ./booking-service/
      env_file: ./booking-service/.env.docker
