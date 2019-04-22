@@ -1,0 +1,44 @@
+version: '3'
+services:
+  auth-service:
+     build: ./auth-service/
+     env_file: ./auth-service/.env.docker
+     restart: always
+  booking-service:
+     build: ./booking-service/
+     env_file: ./booking-service/.env.docker
+     restart: always
+  proxy:
+    build: ./proxy/
+    env_file: ./proxy/.env.docker
+    ports: 
+      - "8080:8080"
+  redis:
+    image: redis    
+  prisma:
+    image: prismagraphql/prisma:1.30
+    restart: always
+    ports:
+    - "4466:4466"
+    environment:
+      PRISMA_CONFIG: |
+        port: 4466
+        databases:
+          default:
+            connector: postgres
+            host: postgres
+            port: 5432
+            user: prisma
+            password: prisma
+            migrations: true
+  postgres:
+    image: postgres:10.3
+    restart: always
+    environment:
+      POSTGRES_USER: prisma
+      POSTGRES_PASSWORD: prisma
+    volumes:
+      - postgres:/var/lib/postgresql/data
+volumes:
+  postgres:
+

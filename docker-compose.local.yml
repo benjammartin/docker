@@ -1,0 +1,20 @@
+version: '3'
+services:
+  auth-service:
+    ports:
+      - '4500:4500'
+  booking-service:
+    ports:
+      - '3500:3500'
+  proxy:
+    ports:
+      - '8080:8080'
+  redis:
+    ports:
+      - '6379:6379'
+  prisma:
+    ports:
+      - '4466:4466'
+  postgres:
+    ports:
+      - '5432:5432'
